@@ -92,11 +92,40 @@ def choice_char_class(char_name: str) -> Character:
     return char_class
 
 
+def start_training(character: Character) -> str:
+    commands = {
+        'attack': character.attack,
+        'defence': character.defence,
+        'special': character.special
+    }
+
+    print(
+        f'{character.name}, ты {character.__class__} - '
+        f'{character.BRIEF_DESC_CHAR_CLASS}')
+    print('Потренируйся управлять своими навыками.')
+    print('Введи одну из команд: attack — чтобы атаковать противника, '
+          'defence — чтобы блокировать атаку противника или '
+          'special — чтобы использовать свою суперсилу.')
+    print('Если не хочешь тренироваться, введи команду skip.')
+
+    action_choise = None
+    cmd = None
+    while cmd != 'skip':
+        cmd = input('Введи команду: ')
+
+        if cmd in commands:
+            action_choise = commands[cmd]
+            print(action_choise)
+
+    return 'Тренировка окончена.'
+
+
 hero = choice_char_class("Зульфик")
 print(hero)
 print(hero.attack)
 print(hero.defence)
 print(hero.special)
+start_training(hero)
 
 # warrior = Warrior('Кодослав')
 # print(warrior)
