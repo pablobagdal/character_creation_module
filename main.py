@@ -100,7 +100,7 @@ def start_training(character: Character) -> str:
     }
 
     print(
-        f'{character.name}, ты {character.__class__} - '
+        f'{character.name}, ты - '
         f'{character.BRIEF_DESC_CHAR_CLASS}')
     print('Потренируйся управлять своими навыками.')
     print('Введи одну из команд: attack — чтобы атаковать противника, '
@@ -122,15 +122,7 @@ def start_training(character: Character) -> str:
 
 hero = choice_char_class("Зульфик")
 print(hero)
-print(hero.attack)
-print(hero.defence)
-print(hero.special)
+print(hero.attack())
+print(hero.defence())
+print(hero.special())
 start_training(hero)
-
-# warrior = Warrior('Кодослав')
-# print(warrior)
-# print(warrior.attack())
-
-# Вывод в терминал:
-# Warrior — дерзкий воин ближнего боя. Сильный, выносливый и отважный.
-# Кодослав нанёс урон противнику, равный 8
